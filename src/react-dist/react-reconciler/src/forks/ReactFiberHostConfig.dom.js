@@ -1,0 +1,1 @@
+export * from "../../../react-dom-bindings/src/client/ReactDOMHostConfig";
