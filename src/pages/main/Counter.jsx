@@ -1,15 +1,24 @@
-import * as React from '../react-dist/react';
+import * as React from '../../react-dist/react';
 
-const { useState, useEffect, useLayoutEffect } = React
+const { useState, useEffect, useLayoutEffect } = React;
 
 export default function Counter({ step }) {
     const [count, setCount] = useState(0);
-    useEffect(() => {
-        console.log('[Counter] useEffect ');
-    });
+
     useLayoutEffect(() => {
         console.log('[Counter] useLayoutEffect ');
+        return () => {
+            console.log('[Counter] useLayoutEffect cleanup ');
+        };
     });
+
+    useEffect(() => {
+        console.log('[Counter] useEffect ');
+        return () => {
+            console.log('[Counter] useEffect cleanup ');
+        };
+    });
+
     const onBtnClick = () => {
         setCount(count + 1);
     };
@@ -21,4 +30,3 @@ export default function Counter({ step }) {
         </div>
     );
 }
-
