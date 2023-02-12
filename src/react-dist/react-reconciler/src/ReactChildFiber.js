@@ -356,6 +356,8 @@ function createChildReconciler(shouldTrackSideEffects) {
   function warnOnInvalidKey(child, knownKeys, returnFiber) {
     return knownKeys;
   }
+
+  // 多个孩子节点的 diff 过程
   function reconcileChildrenArray(returnFiber, currentFirstChild, newChildren, lanes) {
     // This algorithm can't optimize by searching from both ends since we
     // don't have backpointers on fibers. I'm trying to see how far we can get

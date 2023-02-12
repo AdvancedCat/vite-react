@@ -667,7 +667,6 @@ function completeWork(current, workInProgress, renderLanes) {
         }
       }
     // eslint-disable-next-line-no-fallthrough
-
     case HostSingleton:
       {
         if (enableHostSingletons && supportsSingletons) {
